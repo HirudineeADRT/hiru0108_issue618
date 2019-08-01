@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "hiru0108_issue618/lambda.js",
-        "code": "exports.handler = function (event, context, callback) {\n    //KTest1\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
+        "code": "let AWS = require('aws-sdk');\nconst sns = new AWS.SNS();\n\nexports.handler = function (event, context, callback) {\n    sns.publish({\n        Message: '123',\n        Subject: 'test',\n        MessageAttributes: {},\n        MessageStructure: 'String',\n        TopicArn: 'arn:aws:sns:us-east-1:318300609668:TestSNS'\n    }).promise()\n        .then(data => {\n            // your code goes here\n        })\n        .catch(err => {\n            // error handling goes here\n        });\n    //KTest1\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -39,7 +39,29 @@
       "8c1a36bd-d73f-4d13-be37-069a810a4e66"
     ],
     "currentFileId": "8c1a36bd-d73f-4d13-be37-069a810a4e66",
-    "resources": {},
+    "resources": {
+      "snsusEast1TestSNS": {
+        "name": "snsusEast1TestSNS",
+        "type": "SNS",
+        "config": {
+          "topicMode": 1,
+          "topicName": "TestSNS",
+          "topicArn": "arn:aws:sns:us-east-1:318300609668:TestSNS",
+          "topicRegion": "us-east-1",
+          "snsType": 0,
+          "subscriptions": [
+            {
+              "type": "email",
+              "endpoint": "hirudinee@gmail.com"
+            },
+            {
+              "type": "http",
+              "endpoint": "http://"
+            }
+          ]
+        }
+      }
+    },
     "customTemplate": {
       "dialect": null,
       "definitions": {}
@@ -55,7 +77,15 @@
       }
     ],
     "packageJSON": {
-      "dependencies": {}
+      "dependencies": {
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "language": "javascript",
+          "version": "2.176.0",
+          "dev": true,
+          "notRemovable": false
+        }
+      }
     }
   },
   "PROJECT_META": {
@@ -65,7 +95,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1564650686443
+    "lastSave": 1564652458428
   },
   "VCS_STATE": {
     "provider": "GitHub",
@@ -75,7 +105,7 @@
       "branches": [
         {
           "name": "master",
-          "hash": "6737300c3814616710e3fd013d52971c45fcb123"
+          "hash": "3b638257c1cad093ed14da20321f61192cba6d86"
         }
       ]
     }
