@@ -1,4 +1,4 @@
-exports.handler = function(event, context, callback) {
-    //test
-    callback(null, {"message": "Successfully executed"});
+exports.handler = function (event, context, callback) {
+    //KTest1
+    callback(null, { "message": "Successfully executed" });
 }

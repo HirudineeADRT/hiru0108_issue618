@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "hiru0108_issue618/lambda.js",
-        "code": "exports.handler = function(event, context, callback) {\n    //test\n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "code": "exports.handler = function (event, context, callback) {\n    //KTest1\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -65,7 +65,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1564649998995
+    "lastSave": 1564650686443
   },
   "VCS_STATE": {
     "provider": "GitHub",
@@ -75,7 +75,7 @@
       "branches": [
         {
           "name": "master",
-          "hash": "f53f53ebce8148d838c1fc5f976a8879f8dff46f"
+          "hash": "6737300c3814616710e3fd013d52971c45fcb123"
         }
       ]
     }
