@@ -57,6 +57,10 @@
             {
               "type": "http",
               "endpoint": "http://"
+            },
+            {
+              "type": "email",
+              "endpoint": "kumudika@adroitlogic.com"
             }
           ]
         }
@@ -95,7 +99,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1564652458428
+    "lastSave": 1564652731342
   },
   "VCS_STATE": {
     "provider": "GitHub",
@@ -105,7 +109,7 @@
       "branches": [
         {
           "name": "master",
-          "hash": "3b638257c1cad093ed14da20321f61192cba6d86"
+          "hash": "870cde90eeedb0ad1b91cd395223c0d51851a325"
         }
       ]
     }
